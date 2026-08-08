@@ -282,11 +282,17 @@ h1 {
   font-size: .78rem;
 }
 
+.site-description {
+  margin: .8rem 0 0;
+  color: #64748b;
+  font-size: .76rem;
+}
+
 .support-link {
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  margin-top: .9rem;
+  margin-top: .55rem;
   color: #64748b;
   font-size: .76rem;
   font-weight: 650;
@@ -296,6 +302,74 @@ h1 {
 
 .support-link:hover { color: #a5b4fc; }
 .support-link:focus-visible { outline: 3px solid #a5b4fc; outline-offset: 4px; border-radius: 4px; }
+
+.search-guide {
+  margin-top: clamp(2.5rem, 7vw, 4.5rem);
+  padding: clamp(1.4rem, 4vw, 2.25rem);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 22px;
+  background: rgba(17,24,39,.58);
+  box-shadow: 0 20px 60px rgba(0,0,0,.22);
+  text-align: left;
+}
+
+.guide-intro { max-width: 42rem; }
+.guide-kicker {
+  margin: 0 0 .45rem;
+  color: #818cf8;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.search-guide h2 {
+  margin: 0 0 .7rem;
+  color: #f8fafc;
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  letter-spacing: -.025em;
+}
+
+.search-guide p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.feature-grid article {
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  background: rgba(255,255,255,.035);
+}
+
+.feature-grid h3 {
+  margin: 0 0 .4rem;
+  color: #e2e8f0;
+  font-size: .86rem;
+}
+
+.feature-grid p { font-size: .78rem; line-height: 1.55; }
+
+.faq { margin-top: 1.75rem; }
+.faq h2 { margin-bottom: .35rem; font-size: 1.05rem; }
+.faq details { border-bottom: 1px solid rgba(255,255,255,.07); }
+.faq summary {
+  padding: .9rem 0;
+  color: #cbd5e1;
+  font-size: .84rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.faq details p { padding: 0 0 1rem; font-size: .8rem; }
 
 kbd {
   padding: .2rem .4rem;
@@ -316,6 +390,7 @@ kbd {
   .settings-toggle { top: .8rem; right: .8rem; }
   .sound-settings { top: 3.8rem; right: .8rem; width: calc(100% - 1.6rem); }
   .shortcuts { gap: .8rem; flex-direction: column; }
+  .feature-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
