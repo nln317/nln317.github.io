@@ -217,21 +217,20 @@ h1 {
   top: 50%;
   right: 7px;
   left: 7px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   pointer-events: none;
   transform: translateY(-50%);
 }
 .volume-nodes span {
   width: 7px;
   height: 7px;
-  justify-self: center;
+  flex: 0 0 auto;
   border: 1px solid #64748b;
   border-radius: 50%;
   background: #252e40;
 }
-.volume-nodes span:first-child { justify-self: start; }
-.volume-nodes span:last-child { justify-self: end; }
 .volume-nodes span.active { border-color: #a5b4fc; background: #818cf8; }
 .volume-labels { color: #64748b; font-size: .68rem; }
 .preview-button {
