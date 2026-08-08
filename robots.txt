@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nln317.github.io/sitemap.xml
