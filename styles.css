@@ -370,81 +370,6 @@ h1 {
 }
 .faq details p { padding: 0 0 1rem; font-size: .8rem; }
 
-.friend-game {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 1.15rem;
-  margin-top: 1rem;
-  padding: 1.25rem;
-  border: 1px solid rgba(129,140,248,.2);
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(99,102,241,.13), rgba(17,24,39,.66));
-  box-shadow: 0 18px 50px rgba(0,0,0,.18);
-  text-align: left;
-}
-
-.game-icon {
-  display: grid;
-  width: 3rem;
-  height: 3rem;
-  place-items: center;
-  border: 1px solid rgba(165,180,252,.28);
-  border-radius: 14px;
-  color: #c7d2fe;
-  background: rgba(99,102,241,.14);
-  font-size: 1.65rem;
-  font-weight: 700;
-}
-
-.game-copy { min-width: 0; }
-.game-kicker {
-  margin: 0 0 .18rem;
-  color: #818cf8;
-  font-size: .66rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.friend-game h2 {
-  margin: 0 0 .65rem;
-  color: #f8fafc;
-  font-size: 1.15rem;
-  letter-spacing: -.02em;
-}
-
-.game-suggestion h3 {
-  margin: 0 0 .28rem;
-  color: #e2e8f0;
-  font-size: .86rem;
-}
-
-.game-suggestion p {
-  margin: 0;
-  color: #94a3b8;
-  font-size: .78rem;
-  line-height: 1.55;
-}
-
-.game-button {
-  min-height: 42px;
-  padding: .65rem .85rem;
-  border: 1px solid rgba(165,180,252,.24);
-  border-radius: 11px;
-  color: #e0e7ff;
-  background: rgba(99,102,241,.12);
-  font: inherit;
-  font-size: .76rem;
-  font-weight: 800;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color .16s ease, background .16s ease, transform .16s ease;
-}
-
-.game-button:hover { color: #fff; background: rgba(99,102,241,.22); transform: translateY(-1px); }
-.game-button:focus-visible { outline: 3px solid #a5b4fc; outline-offset: 3px; }
-
 kbd {
   padding: .2rem .4rem;
   border: 1px solid rgba(255,255,255,.12);
@@ -465,8 +390,6 @@ kbd {
   .sound-settings { top: 3.8rem; right: .8rem; width: calc(100% - 1.6rem); }
   .shortcuts { gap: .8rem; flex-direction: column; }
   .feature-grid { grid-template-columns: 1fr; }
-  .friend-game { grid-template-columns: auto 1fr; }
-  .game-button { grid-column: 1 / -1; width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
