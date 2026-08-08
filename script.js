@@ -13,6 +13,9 @@
   const volumeNodes = [...document.querySelectorAll(".volume-nodes span")];
   const previewButton = document.querySelector("#preview-sound");
   const previewLabel = previewButton.querySelector(".preview-label");
+  const gameTitle = document.querySelector("#game-title");
+  const gameDescription = document.querySelector("#game-description");
+  const newChallengeButton = document.querySelector("#new-challenge");
 
   const soundThemes = {
     deep: { waveform: "triangle", start: [220, 277.18], stop: [196, 130.81], gain: 0.65, duration: 0.16 },
@@ -20,6 +23,25 @@
     digital: { waveform: "square", start: [440, 659.25], stop: [329.63, 220], gain: 0.25, duration: 0.1 },
     soft: { waveform: "sine", start: [392, 523.25], stop: [349.23, 261.63], gain: 0.34, duration: 0.2 },
   };
+
+  const gameChallenges = [
+    {
+      title: "Closest to 10",
+      description: "Take turns starting the timer, look away, and stop when you think 10 seconds have passed. Closest time wins.",
+    },
+    {
+      title: "Seven-second showdown",
+      description: "No counting aloud: each player tries to stop at exactly 7.00 seconds. The smallest difference wins.",
+    },
+    {
+      title: "Team total: 30",
+      description: "Each person adds one blind attempt. Work together to finish as close as possible to a combined 30 seconds.",
+    },
+    {
+      title: "Beat the host",
+      description: "The host sets a hidden target from 5 to 15 seconds. Everyone gets one attempt; closest to the target wins.",
+    },
+  ];
 
   const savedTheme = localStorage.getItem("stopwatch-sound-theme");
   if (savedTheme && soundThemes[savedTheme]) soundThemeSelect.value = savedTheme;
@@ -32,6 +54,7 @@
   let elapsed = 0;
   let animationFrame = null;
   let audioContext = null;
+  let gameIndex = 0;
 
   const renderVolume = () => {
     const volume = Number(volumeInput.value);
@@ -144,6 +167,12 @@
       previewLabel.textContent = "Preview Start + Stop";
       setControls();
     }, 450);
+  });
+
+  newChallengeButton.addEventListener("click", () => {
+    gameIndex = (gameIndex + 1) % gameChallenges.length;
+    gameTitle.textContent = gameChallenges[gameIndex].title;
+    gameDescription.textContent = gameChallenges[gameIndex].description;
   });
 
   document.addEventListener("click", (event) => {
