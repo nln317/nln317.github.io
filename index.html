@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stopwatch" aria-labelledby="page-title">
+    <p class="eyebrow">Focus timer</p>
+    <h1 id="page-title">Stopwatch</h1>
+
+    <section class="timer-card" aria-label="Stopwatch controls">
+      <button
+        id="settings-toggle"
+        class="settings-toggle"
+        type="button"
+        aria-label="Sound settings"
+        aria-expanded="false"
+        aria-controls="sound-settings"
+      >
+        <span aria-hidden="true">⚙</span>
+      </button>
+      <p id="status" class="status"><span class="status-dot" aria-hidden="true"></span>Ready</p>
+      <div id="display" class="display" role="timer" aria-live="off" aria-label="Elapsed time: 0 minutes, 0 seconds">00:00.00</div>
+
+      <div id="sound-settings" class="sound-settings" role="group" aria-label="Sound settings" hidden>
+        <div class="settings-heading">
+          <strong>Sound settings</strong>
+          <span>Applied to both Start and Stop</span>
+        </div>
+        <div class="settings-field">
+          <label for="sound-theme">Theme</label>
+          <select id="sound-theme" aria-describedby="sound-theme-note">
+            <option value="deep">Deep</option>
+            <option value="classic">Classic</option>
+            <option value="digital">Digital</option>
+            <option value="soft">Soft</option>
+          </select>
+        </div>
+        <div class="volume-control">
+          <div class="volume-heading">
+            <label for="sound-volume">Volume</label>
+            <output id="volume-output" for="sound-volume">5 / 5</output>
+          </div>
+          <div class="volume-slider">
+            <input id="sound-volume" type="range" min="1" max="5" step="1" value="5" aria-valuetext="5 out of 5">
+            <div class="volume-nodes" aria-hidden="true">
+              <span class="active"></span>
+              <span class="active"></span>
+              <span class="active"></span>
+              <span class="active"></span>
+              <span class="active"></span>
+            </div>
+          </div>
+          <div class="volume-labels" aria-hidden="true"><span>Quiet</span><span>Loud</span></div>
+        </div>
+        <button id="preview-sound" class="preview-button" type="button">
+          <span aria-hidden="true">♪</span> <span class="preview-label">Preview Start + Stop</span>
+        </button>
+        <span id="sound-theme-note" class="sr-only">Sound settings and preview are unavailable while the stopwatch is running.</span>
+      </div>
+
+      <div class="controls">
+        <button id="start" class="button button-primary" type="button">
+          <span aria-hidden="true">▶</span> Start
+        </button>
+        <button id="stop" class="button button-secondary" type="button" disabled>
+          <span aria-hidden="true">■</span> Stop
+        </button>
+        <button id="reset" class="button button-ghost" type="button">
+          <span aria-hidden="true">↻</span> Reset
+        </button>
+      </div>
+    </section>
+
+    <p class="shortcuts" aria-label="Keyboard shortcuts">
+      <span><kbd>Space</kbd> Start / Stop</span>
+      <span><kbd>R</kbd> Reset</span>
+    </p>
+    <a class="support-link" href="https://ko-fi.com/nnnn1" target="_blank" rel="noreferrer">
+      Enjoying this? Support the project <span aria-hidden="true">↗</span>
+    </a>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
